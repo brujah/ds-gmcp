@@ -18,7 +18,28 @@
   ds.mana = tonumber(gmcp.Char.Vitals.mana)
   ds.maxmana = tonumber(gmcp.Char.Vitals.maxmana)
   
-end</script>
+  --registerAnonymousEventHandler("sysGetHttpDone", onHttpGetDone)
+  --registerAnonymousEventHandler("sysGetHttpError", onGetHttpError)
+  
+  --getHTTP("https://api.github.com/repos/brujah/ds-gmcp/releases/latest")
+  
+end
+
+function onHttpGetDone(event, url, body)
+  cecho(string.format("&lt;white&gt;url: &lt;dark_green&gt;%s&lt;white&gt;, body: &lt;dark_green&gt;%s", url, body))
+  
+  local response = yajl.to_value(body)
+  
+  display("Tag: " .. response)
+  
+end
+
+function onGetHttpError(event, error, url)
+  display("An error occurred: " .. error)
+end
+
+
+getHTTP("https://httpbin.org/are_you_awesome", {["X-am-I-awesome"] = "yep I am"})</script>
 			<eventHandlerList>
 				<string>gmcp.Char.Vitals</string>
 			</eventHandlerList>
