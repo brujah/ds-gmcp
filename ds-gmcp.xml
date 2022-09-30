@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<ScriptPackage>
+		<Script isActive="yes" isFolder="no">
+			<name>gmcpCharVitals</name>
+			<packageName></packageName>
+			<script>function gmcpCharVitals()
+  
+  ds = ds or {}
+  
+  ds.hp = tonumber(gmcp.Char.Vitals.hp)
+  ds.maxhp = tonumber(gmcp.Char.Vitals.maxhp)
+  ds.mana = tonumber(gmcp.Char.Vitals.mana)
+  ds.maxmana = tonumber(gmcp.Char.Vitals.maxmana)
+  
+end</script>
+			<eventHandlerList>
+				<string>gmcp.Char.Vitals</string>
+			</eventHandlerList>
+		</Script>
+	</ScriptPackage>
+</MudletPackage>
